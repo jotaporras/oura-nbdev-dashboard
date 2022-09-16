@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "oura-nbdev-dashboard"
+  site-url: "https://jotaporras.github.io/oura-nbdev-dashboard"
+  description: "Exploring nbdev by building a dashboard using the oura API"
+  repo-branch: master
+  repo-url: "https://github.com/jotaporras/oura-nbdev-dashboard"
