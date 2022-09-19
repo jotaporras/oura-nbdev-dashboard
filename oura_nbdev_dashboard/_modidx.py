@@ -9,4 +9,6 @@ d = { 'settings': { 'branch': 'master',
             'oura_nbdev_dashboard.total_sleep': { 'oura_nbdev_dashboard.total_sleep.foo': ( 'first_nbdev.html#foo',
                                                                                             'oura_nbdev_dashboard/total_sleep.py'),
                                                   'oura_nbdev_dashboard.total_sleep.say_hello': ( 'first_nbdev.html#say_hello',
-                                                                                                  'oura_nbdev_dashboard/total_sleep.py')}}}
+                                                                                                  'oura_nbdev_dashboard/total_sleep.py')},
+            'oura_nbdev_dashboard.total_sleep_demo': { 'oura_nbdev_dashboard.total_sleep_demo.get_daily_sleep': ( 'total_sleep_demo.html#get_daily_sleep',
+                                                                                                                  'oura_nbdev_dashboard/total_sleep_demo.py')}}}
