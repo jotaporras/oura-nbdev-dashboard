@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "total_sleep_demo.html",
+    "href": "total_sleep_demo.html",
+    "title": "oura-nbdev-dashboard",
+    "section": "",
+    "text": "source\n\nget_daily_sleep\n\n get_daily_sleep (start_date:str, end_date:str, token:str)\n\n\n\n\n\nType\nDetails\n\n\n\n\nstart_date\nstr\nend date\n\n\nend_date\nstr\nstart date\n\n\ntoken\nstr\nOura’s personal access token\n\n\nReturns\ndict\nReturns the data JSOn of the response\n\n\n\n\nimport os\n\n# Plug the OURA_TOKEN yourself :) \ndaily_sleep_data = get_daily_sleep(\n    start_date='2022-09-01',\n    end_date='2022-09-16',\n    token=os.environ[\"OURA_TOKEN\"]\n)\n\n\n# Sample point.\nstr(daily_sleep_data[0])[:500]\n\n\"{'average_breath': 16.125, 'average_heart_rate': 64.25, 'average_hrv': 33, 'awake_time': 2070, 'bedtime_end': '2022-09-01T06:00:51-06:00', 'bedtime_start': '2022-08-31T22:04:51-06:00', 'day': '2022-09-01', 'deep_sleep_duration': 4710, 'efficiency': 93, 'heart_rate': {'interval': 300.0, 'items': [None, None, 67.0, 68.0, 69.0, 71.0, 70.0, 69.0, 70.0, 71.0, 69.0, 68.0, 62.0, 62.0, 63.0, 65.0, 66.0, 70.0, 71.0, 71.0, 70.0, 71.0, 69.0, 67.0, 68.0, 68.0, 68.0, 68.0, 66.0, 66.0, 66.0, 65.0, 63.0, 63.0,\"\n\n\n\nimport seaborn as sns\nimport pandas as pd\n# Getting total sleep minutes from contributors\n\ndaily_sleep_seconds=[(d['day'],d['total_sleep_duration']) for d in daily_sleep_data]\ndaily_sleep_seconds\n\ndaily_sleep_df=pd.DataFrame(daily_sleep_seconds,columns=['date','total_sleep_s'])\ndaily_sleep_df['total_sleep_h']=daily_sleep_df.total_sleep_s/3600\ndaily_sleep_df['date'] = pd.to_datetime(daily_sleep_df.date)\nsns.lineplot(data=daily_sleep_df,x='date',y='total_sleep_h')\n\n<AxesSubplot: xlabel='date', ylabel='total_sleep_h'>"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Oura NBDev Dashboard",
+    "section": "",
+    "text": "Example usage\n\nimport os\n\n# Plug the OURA_TOKEN yourself :) \ndaily_sleep_data = get_daily_sleep(\n    start_date='2022-09-01',\n    end_date='2022-09-16',\n    token=os.environ[\"OURA_TOKEN\"] # Get from Personal Access Tokens on the Oura API docs.\n)\n\n\nstr(daily_sleep_data)[:500]\n\n\"[{'average_breath': 16.125, 'average_heart_rate': 64.25, 'average_hrv': 33, 'awake_time': 2070, 'bedtime_end': '2022-09-01T06:00:51-06:00', 'bedtime_start': '2022-08-31T22:04:51-06:00', 'day': '2022-09-01', 'deep_sleep_duration': 4710, 'efficiency': 93, 'heart_rate': {'interval': 300.0, 'items': [None, None, 67.0, 68.0, 69.0, 71.0, 70.0, 69.0, 70.0, 71.0, 69.0, 68.0, 62.0, 62.0, 63.0, 65.0, 66.0, 70.0, 71.0, 71.0, 70.0, 71.0, 69.0, 67.0, 68.0, 68.0, 68.0, 68.0, 66.0, 66.0, 66.0, 65.0, 63.0, 63.0\""
+  },
+  {
+    "objectID": "first_nbdev.html",
+    "href": "first_nbdev.html",
+    "title": "Exploring the nbdev tutorial",
+    "section": "",
+    "text": "source\n\nsay_hello\n\n say_hello (to)\n\nSay hello to somebody\n\n# This also works as a test.\nsay_hello(\"Javier\")\n\n'Hello Javier!'\n\n\n\n# hide\nassert say_hello(\"Javier\") == \"Hello Javier!\"\n\nAssertionError: \n\n\n\nsource\n\n\nfoo\n\n foo ()"
+  }
+]
